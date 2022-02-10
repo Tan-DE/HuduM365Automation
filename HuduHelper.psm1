@@ -199,6 +199,7 @@ function Get-LicenseLookup {
         'SPB'                                     = 'Microsoft 365 Business Premium'
         'O365_BUSINESS_PREMIUM'                   = 'Microsoft 365 Business Standard'
         'SMB_BUSINESS_PREMIUM'                    = 'Microsoft 365 Business Standard'
+        'BUSINESS_VOICE_DIRECTROUTING'            = 'Microsoft 365 Business Voice (without calling plan)'
         'MCOPSTN_5'                               = 'Microsoft 365 Domestic Calling Plan (120 Minutes)'
         'SPE_E3'                                  = 'Microsoft 365 E3'
         'SPE_E3_USGOV_DOD'                        = 'Microsoft 365 E3_Usgov_Dod'
