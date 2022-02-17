@@ -680,10 +680,10 @@ try {
                     $UserBody = "<div>$AssignedPlansBlock<br />$UserLinksBlock<br /><div class=`"nasa__content`">$($UserOverviewBlock)$($UserMailDetailsBlock)$($OneDriveBlock)$($UserMailSettingsBlock)$($UserPoliciesBlock)</div><div class=`"nasa__content`">$($UserDevicesDetailsBlock)</div><div class=`"nasa__content`">$($UserGroupsBlock)</div></div>"
 
                     $UserAssetFields = @{
+                        "E-Mail" = $user.UserPrincipalName
                         microsoft_365 = $UserBody
                     }
 
-                    
                     $HuduUserCount = ($HuduUser | measure-object).count
                     if ($HuduUserCount -eq 1) {
                         $null = Set-HuduAsset -asset_id $HuduUser.id -name $HuduUser.name -company_id $company_id -asset_layout_id $PeopleLayout.id -fields $UserAssetFields
@@ -695,7 +695,6 @@ try {
                     } else {
                         $CompanyResult.Errors.add("User $($User.UserPrincipalName): Multiple Users Matched to email address in Hudu: ($($HuduUser.name -join ', ') - $($($HuduUser.id -join ', '))) $_")
                     }
-
 
                     $UserLink = "<a target=_blank href=$($HuduUser.url)>$($user.DisplayName)</a>"
                
